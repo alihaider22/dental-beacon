@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="px-6 py-12 border-t bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -87,8 +89,8 @@ function Footer() {
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>
-            &copy; 2024 Dental Beacon. Built for real people with real dental
-            questions.
+            &copy; {currentYear} Dental Beacon. Built for real people with real
+            dental questions.
           </p>
         </div>
       </div>

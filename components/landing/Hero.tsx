@@ -1,4 +1,4 @@
-import { SignUpButton } from "@clerk/nextjs";
+import { SignInButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
 import { CalendarIcon, MicIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
@@ -54,19 +54,19 @@ function Hero() {
 
               {/* CTA BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <SignUpButton mode="modal">
+                <SignInButton mode="modal" forceRedirectUrl="/voice">
                   <Button size={"lg"}>
                     <MicIcon className="mr-2 size-5" />
                     Try voice agent
                   </Button>
-                </SignUpButton>
+                </SignInButton>
 
-                <SignUpButton mode="modal">
+                <SignInButton mode="modal" forceRedirectUrl="/appointments">
                   <Button size={"lg"} variant={"outline"}>
                     <CalendarIcon className="mr-2 size-5" />
                     Book appointment
                   </Button>
-                </SignUpButton>
+                </SignInButton>
               </div>
 
               {/* USER TESTIMONIALS */}

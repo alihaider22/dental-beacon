@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MicIcon, CalendarIcon } from "lucide-react";
+import { SignInButton } from "@clerk/nextjs";
 
 function CTA() {
   return (
@@ -38,21 +39,26 @@ function CTA() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button
-                size="lg"
-                className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
-              >
-                <MicIcon className="mr-2 h-4 w-4" />
-                Start free chat
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-6 py-3 font-semibold border border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 rounded-xl"
-              >
-                <CalendarIcon className="mr-2 h-4 w-4" />
-                Book appointment
-              </Button>
+              <SignInButton mode="modal" forceRedirectUrl="/voice">
+                <Button
+                  size="lg"
+                  className="px-6 py-3 font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/95 hover:to-primary/85 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+                >
+                  <MicIcon className="mr-2 h-4 w-4" />
+                  Start voice chat
+                </Button>
+              </SignInButton>
+
+              <SignInButton mode="modal" forceRedirectUrl="/appointments">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-6 py-3 font-semibold border border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 rounded-xl"
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  Book appointment
+                </Button>
+              </SignInButton>
             </div>
           </div>
 
